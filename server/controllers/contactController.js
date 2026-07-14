@@ -1,5 +1,5 @@
 const transporter = require("../config/mailer");
-
+console.log(require("../controllers/contactController"));
 const sendMessage = async (req, res) => {
 
     try {
