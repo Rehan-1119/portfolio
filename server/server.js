@@ -33,7 +33,7 @@ app.get("/", (req, res) => {
    Server
 ================================ */
 
-const PORT = process.env.PORT || 7000;
+const PORT = process.env.PORT ;
 
 app.listen(PORT, () => {
 
