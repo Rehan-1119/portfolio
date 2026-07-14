@@ -2,7 +2,7 @@ const nodemailer = require("nodemailer");
 
 const transporter = nodemailer.createTransport({
 
-    host: "smtp.gmail.com",
+    host: "smtp-relay.brevo.com",
 
     port: 587,
 
@@ -14,21 +14,8 @@ const transporter = nodemailer.createTransport({
 
         pass: process.env.EMAIL_PASS
 
-    },
-
-    tls: {
-
-        rejectUnauthorized: false
-
     }
 
-});
-transporter.verify((error, success) => {
-    if (error) {
-        console.log("SMTP ERROR:", error);
-    } else {
-        console.log("SMTP Server is ready.");
-    }
 });
 
 module.exports = transporter;
