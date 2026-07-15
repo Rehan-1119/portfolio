@@ -44,7 +44,7 @@ export default function Contact() {
 
             setLoading(true);
 
-            const response = await axios.post(
+            await axios.post(
                 `${process.env.REACT_APP_API_URL}/api/contact`,
                 formData
             );
@@ -165,15 +165,15 @@ export default function Contact() {
 
                             <div className="contact-social">
 
-                                <a href="#">
+                                <a href="/">
                                     <FaGithub />
                                 </a>
 
-                                <a href="#">
+                                <a href="/">
                                     <FaLinkedin />
                                 </a>
 
-                                <a href="#">
+                                <a href="/">
                                     <FaInstagram />
                                 </a>
 
