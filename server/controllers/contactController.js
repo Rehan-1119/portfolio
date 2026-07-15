@@ -1,5 +1,7 @@
-const transporter = require("../config/mailer");
-console.log(require("../controllers/contactController"));
+const { Resend } = require("resend");
+
+const resend = new Resend(process.env.RESEND_API_KEY);
+
 const sendMessage = async (req, res) => {
 
     try {
@@ -17,16 +19,17 @@ const sendMessage = async (req, res) => {
 
         }
 
-        const mailOptions = {
+        const { data, error } = await resend.emails.send({
 
-            from: process.env.EMAIL_USER,
+            from: "Portfolio <onboarding@resend.dev>",
 
-            to: process.env.EMAIL_USER,
+            to: "iaarehankhan2000@gmail.com",
+
+            replyTo: email,
 
             subject: `📩 Portfolio Contact - ${subject}`,
 
             html: `
-
                 <h2>New Portfolio Contact</h2>
 
                 <hr>
@@ -40,33 +43,47 @@ const sendMessage = async (req, res) => {
                 <p><strong>Message:</strong></p>
 
                 <p>${message}</p>
-
             `
 
-        };
+        });
 
-        await transporter.sendMail(mailOptions);
+        if (error) {
+
+            console.error(error);
+
+            return res.status(500).json({
+
+                success: false,
+
+                message: error.message
+
+            });
+
+        }
 
         return res.status(200).json({
 
             success: true,
 
-            message: "Message Sent Successfully."
+            message: "Message Sent Successfully 🚀"
 
         });
 
     }
 
-   catch (error) {
+    catch (error) {
 
-    console.error("EMAIL ERROR:", error);
+        console.error(error);
 
-    return res.status(500).json({
-        success: false,
-        message: error.message
-    });
+        return res.status(500).json({
 
-}
+            success: false,
+
+            message: error.message
+
+        });
+
+    }
 
 };
 
