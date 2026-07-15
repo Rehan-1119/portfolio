@@ -1,22 +1,40 @@
-.navbar{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:80px;
+.custom-navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
 
+    width: 100%;
+    height: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 50px;
+
+    z-index: 1000;
+    transition: .4s;
+
+    box-sizing: border-box;
+}
+.nav-left{
+    flex:1;
     display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    padding:0 8%;
-
-    z-index:1000;
-
-    transition:0.4s;
+    justify-content:flex-start;
 }
 
-.glass{
+.nav-center{
+    flex:2;
+    display:flex;
+    justify-content:center;
+}
+
+.nav-right{
+    flex:1;
+    display:flex;
+    justify-content:flex-end;
+}
+.custom-navbar.glass{
 
     backdrop-filter:blur(20px) !important;
 
@@ -25,28 +43,28 @@
     border-bottom:1px solid rgba(255,255,255,.08);
 
 }
-
 .nav-logo{
 
-    color:white;
-
     font-size:32px;
-
+    color:white;
     font-weight:700;
 
-    letter-spacing:2px;
-   margin-left: 200px;
-    margin-right: -100px;
+    margin:0;
 
 }
-
 .nav-links{
 
-    display:flex;
+    flex:2;
 
-    gap:40px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    gap:45px;
 
     list-style:none;
+    margin:0;
+    padding:0;
 
 }
 
@@ -97,23 +115,11 @@
 }
 
 .resume-btn{
-
     background:#38BDF8;
-
     color:white;
-
-    border:none;
-
     padding:12px 24px;
-
     border-radius:30px;
-
-    cursor:pointer;
-
-    transition:.3s;
-  margin-right: 150px;
-    margin-left: -100px;
-
+    margin: 0;
 }
 
 .resume-btn:hover{
@@ -175,6 +181,71 @@ display:block;
 .resume-btn{
 
 display:none;
+
+}
+
+}
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width:768px){
+
+.navbar{
+
+    padding:0 25px;
+    height:75px;
+
+}
+
+.nav-logo{
+
+    font-size:26px;
+    margin:0;
+     flex:none;
+
+}
+
+.menu-icon{
+
+    display:block;
+    font-size:38px;
+
+}
+
+.nav-links{
+
+    top:75px;
+    padding:35px 0;
+    gap:30px;
+
+}
+
+.nav-links li a{
+
+    font-size:18px;
+
+}
+
+}
+
+@media (max-width:480px){
+
+.navbar{
+
+    padding:0 16px;
+
+}
+
+.nav-logo{
+
+    font-size:22px;
+
+}
+
+.menu-icon{
+
+    font-size:36px;
 
 }
 

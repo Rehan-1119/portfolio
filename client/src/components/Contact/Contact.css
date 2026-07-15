@@ -241,3 +241,107 @@ justify-content:center;
     gap:10px;
 
 }
+/* ==========================================
+   MOBILE RESPONSIVE
+========================================== */
+
+@media (max-width:768px){
+
+.contact{
+    padding:90px 0;
+}
+
+.contact-wrapper{
+    grid-template-columns:1fr;
+    padding:30px 20px;
+    gap:40px;
+}
+
+.contact-heading{
+    margin-bottom:45px;
+}
+
+.contact-heading h2{
+    font-size:34px;
+}
+
+.contact-left{
+    text-align:center;
+}
+
+.contact-left h3{
+    font-size:30px;
+}
+
+.contact-info{
+    gap:20px;
+}
+
+.contact-info div{
+    justify-content:center;
+    flex-wrap:wrap;
+    text-align:center;
+}
+
+.contact-info span{
+    word-break:break-word;
+    overflow-wrap:break-word;
+}
+
+.contact-social{
+    justify-content:center;
+}
+
+.contact-form input,
+.contact-form textarea{
+    padding:16px;
+    font-size:16px;
+}
+
+.primary-btn{
+    width:100%;
+}
+
+}
+
+@media (max-width:480px){
+
+.contact-heading h2{
+    font-size:28px;
+}
+
+.contact-left h3{
+    font-size:26px;
+}
+
+.contact-left p{
+    font-size:15px;
+    line-height:1.8;
+}
+
+.contact-info div{
+    flex-direction:column;
+    gap:8px;
+}
+
+.contact-info span{
+    font-size:15px;
+    text-align:center;
+    word-break:break-word;
+}
+
+.contact-social{
+    gap:15px;
+}
+
+.contact-social a{
+    width:50px;
+    height:50px;
+    font-size:20px;
+}
+
+.contact-wrapper{
+    padding:25px 15px;
+}
+
+}

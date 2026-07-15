@@ -27,42 +27,44 @@ export default function Navbar() {
 
     return (
 
-        <nav className={scrolled ? "navbar glass" : "navbar"}>
+        <nav className={scrolled ? "custom-navbar glass" : "custom-navbar"}>
 
-            <div className="nav-logo">
-                RK.
-            </div>
+    <div className="nav-left">
+        <div className="nav-logo">
+            RK.
+        </div>
+    </div>
 
-            <ul className={menuOpen ? "nav-links active" : "nav-links"}>
+    <div className="nav-center">
 
-                <li><a href="#home">Home</a></li>
+        <ul className={menuOpen ? "nav-links active" : "nav-links"}>
 
-                <li><a href="#about">About</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
 
-                <li><a href="#skills">Skills</a></li>
+        </ul>
 
-                <li><a href="#projects">Projects</a></li>
+    </div>
 
-                <li><a href="#contact">Contact</a></li>
+    <div className="nav-right">
 
-            </ul>
+        <button className="resume-btn">
+            Resume
+        </button>
 
-            <button className="resume-btn">
-                Resume
-            </button>
+    </div>
 
-            <div
-                className="menu-icon"
-                onClick={() => setMenuOpen(!menuOpen)}
-            >
-                {
-                    menuOpen
-                        ? <FaTimes />
-                        : <FaBars />
-                }
-            </div>
+    <div
+        className="menu-icon"
+        onClick={() => setMenuOpen(!menuOpen)}
+    >
+        {menuOpen ? <FaTimes /> : <FaBars />}
+    </div>
 
-        </nav>
+</nav>
 
     );
 }
